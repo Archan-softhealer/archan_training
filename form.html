@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #007bff;
+        }
+
+        .form-container {
+            background-color: #d7dce6;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 450px;
+        }
+
+        .form-container h1 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #2985e8;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 95%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .radio-group {
+            margin-bottom: 15px;
+        }
+
+        .prefProd {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #2985e8;
+            font-weight: 800;
+        }
+
+        .radio-group input {
+            margin-right: 10px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+
+        button {
+            width: 40%;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bolder;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Online Order Form</h1>
+        <p style="font-size: 14px;">Please fill in the order form below with the items you want to purchase from our store. Thank you for choosing our service!
+            <br>
+            <hr>
+        </p>
+        <form>
+            <div class="radio-group">
+                <label class="prefProd">Preferred product*</label><br>
+                <div>
+                    <input type="radio" name="product" id="product1" value="Product 1">
+                    <label for="product1">Product 1</label>
+                </div>
+                <div>
+                    <input type="radio" name="product" id="product2" value="Product 2">
+                    <label for="product2">Product 2</label>
+                </div>
+                <div>
+                    <input type="radio" name="product" id="product3" value="Product 3">
+                    <label for="product3">Product 3</label>
+                </div>
+                <div>
+                    <input type="radio" name="product" id="product4" value="Product 4">
+                    <label for="product4">Product 4</label>
+                </div>
+                <div>
+                    <input type="radio" name="product" id="product5" value="Product 5">
+                    <label for="product5">Product 5</label>
+                </div>
+                <div>
+                    <input type="radio" name="product" id="product6" value="Product 6">
+                    <label for="product6">Product 6</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity*</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="delivery-date">Delivery Date*</label>
+                <input type="date" id="delivery-date" name="delivery-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Delivery Address*</label>
+                <input type="text" id="address" name="address" placeholder="Street Address" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="address-line-2" name="address-line-2" placeholder="Street Address Line 2">
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="city" name="city" placeholder="City" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="region" name="region" placeholder="Region" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="postal-code" name="postal-code" placeholder="Postal / Zip Code" required>
+            </div>
+
+            <div class="form-group">
+                <select id="country" name="country" required>
+                    <option value="">Select Country</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">UK</option>
+                    <option value="India">India</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name*</label>
+                <input type="text" id="name" name="name" placeholder="First name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="last-name" name="last-name" placeholder="Last name">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone*</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter mobile number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms of service.</label>
+            </div>
+<br><br>
+            <button type="submit">ORDER NOW</button>
+        </form>
+    </div>
+</body>
+</html>
