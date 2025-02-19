@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View library.book View List -->
+    <record id="view_library_book_list" model="ir.ui.view">
+        <field name="name">view.library.book.list</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View library.book form -->
+    <record id="view_library_book_form" model="ir.ui.view">
+        <field name="name">view.library.book.form</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form string="Library Book">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <group >
+                        <field name="category_id" />
+                        <field name="author" />
+                        <field name="published_date" />
+                        <field name="available_copies" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View library.book search -->
+    <record id="view_library_book_search" model="ir.ui.view">
+        <field name="name">view.library.book.search</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action library.book -->
+    <record id="action_library_book" model="ir.actions.act_window">
+        <field name="name">Library Book</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Library Book.
+            </p>
+        </field>
+    </record>
+
+</odoo>

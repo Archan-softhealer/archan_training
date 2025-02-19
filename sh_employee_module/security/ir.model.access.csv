@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sh_employee,sh.employee,model_sh_employee,base.group_user,1,1,1,1
+sh_employee_module.access_sh_department,access_sh_department,sh_employee_module.model_sh_department,base.group_user,1,1,1,1
+sh_employee_module.access_sh_jobs,access_sh_jobs,sh_employee_module.model_sh_jobs,base.group_user,1,1,1,1
+sh_employee_module.access_sh_category,access_sh_category,sh_employee_module.model_sh_category,base.group_user,1,1,1,1
+sh_employee_module.access_sh_doctor,access_sh_doctor,sh_employee_module.model_sh_doctor,base.group_user,1,1,1,1
+sh_employee_module.access_sh_patient,access_sh_patient,sh_employee_module.model_sh_patient,base.group_user,1,1,1,1
+sh_employee_module.access_sh_diagnosis,access_sh_diagnosis,sh_employee_module.model_sh_diagnosis,base.group_user,1,1,1,1
+sh_employee_module.access_sh_sh_age_category,access_sh_age_category,sh_employee_module.model_sh_agecategory,base.group_user,1,1,1,1

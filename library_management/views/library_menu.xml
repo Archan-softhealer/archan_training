@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <menuitem id="model_library_root" web_icon="library_management,static/description/library.png" name="Library Management" sequence="1">
+     <menuitem id="model_book" name="Books" action="action_library_book"/>
+     <menuitem id="model_category" name="Category" action="action_library_category"/>
+     <menuitem id="model_member" name="Member" action="action_library_member"/> 
+     <menuitem id="model_borrowing" name="Borrowing" action="action_library_borrowing"/>   
+ </menuitem>  
+</odoo>

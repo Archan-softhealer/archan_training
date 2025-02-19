@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View sh.patient View List -->
+    <record id="view_sh_patient_list" model="ir.ui.view">
+        <field name="name">view.sh.patient.list</field>
+        <field name="model">sh.patient</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="diagnosis" widget="many2many_tags"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View sh.patient form -->
+    <record id="view_sh_patient_form" model="ir.ui.view">
+        <field name="name">view.sh.patient.form</field>
+        <field name="model">sh.patient</field>
+        <field name="arch" type="xml">
+            <form string="Sh Patient">
+                <sheet>
+                    <div class="oe_title">
+                            <h1>
+                              <group>
+                                <field name="name"/>
+                               </group> 
+                            </h1>
+                    </div>
+                    <div>
+                      <group >
+                         <field name="age" />
+                         <field name="doctor" />
+                         <field name="diagnosis" widget="many2many_tags" />
+                      </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action sh.patient -->
+    <record id="action_sh_patient" model="ir.actions.act_window">
+        <field name="name">Sh Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.patient</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Sh Patient.
+            </p>
+        </field>
+    </record>
+
+</odoo>

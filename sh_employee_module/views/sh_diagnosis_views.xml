@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View sh.diagnosis View List -->
+    <record id="view_sh_diagnosis_list" model="ir.ui.view">
+        <field name="name">view.sh.diagnosis.list</field>
+        <field name="model">sh.diagnosis</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View sh.diagnosis form -->
+    <record id="view_sh_diagnosis_form" model="ir.ui.view">
+        <field name="name">view.sh.diagnosis.form</field>
+        <field name="model">sh.diagnosis</field>
+        <field name="arch" type="xml">
+            <form string="Sh Diagnosis">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <div>
+                     <group>
+                      <field name="patient" widget="many2many_tags"/>
+                      </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View sh.diagnosis search -->
+    <record id="view_sh_diagnosis_search" model="ir.ui.view">
+        <field name="name">view.sh.diagnosis.search</field>
+        <field name="model">sh.diagnosis</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action sh.diagnosis -->
+    <record id="action_sh_diagnosis" model="ir.actions.act_window">
+        <field name="name">Sh Diagnosis</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.diagnosis</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Sh Diagnosis.
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View sh.department View List -->
+    <record id="view_sh_department_list" model="ir.ui.view">
+        <field name="name">sh.department.list</field>
+        <field name="model">sh.department</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="parent_department"/>
+                <field name="manager_id"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View sh.department form -->
+    <record id="view_sh_department_form" model="ir.ui.view">
+        <field name="name">sh.department.form</field>
+        <field name="model">sh.department</field>
+        <field name="arch" type="xml">
+            <form string="form">
+                <sheet>
+                    <div>
+                    <group>
+                        <field name="name"/>
+                        <field name="parent_department"/>
+                        <field name="child_ids" widget="one2many_list"/>
+                        <field name="member_ids" widget="one2many_list"/>
+                        <field name="jobs_ids" widget="one2many_list"/>
+                        <field name="manager_id"/>
+                        <field name="active"/>
+                     </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View sh.department search -->
+    <record id="view_sh_department_search" model="ir.ui.view">
+        <field name="name">view.sh.department.search</field>
+        <field name="model">sh.department</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action sh.department -->
+    <record id="action_sh_department" model="ir.actions.act_window">
+        <field name="name">Sh Department</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.department</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Sh Department.
+            </p>
+        </field>
+    </record> 
+
+</odoo>

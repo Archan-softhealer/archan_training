@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View library.category View List -->
+    <record id="view_library_category_list" model="ir.ui.view">
+        <field name="name">view.library.category.list</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View library.category form -->
+    <record id="view_library_category_form" model="ir.ui.view">
+        <field name="name">view.library.category.form</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <form string="Library Category">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                      <field name="book_ids" widget="many2many_tags" />
+                      <field name="description" />     
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View library.category search -->
+    <record id="view_library_category_search" model="ir.ui.view">
+        <field name="name">view.library.category.search</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action library.category -->
+    <record id="action_library_category" model="ir.actions.act_window">
+        <field name="name">Library Category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.category</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Library Category.
+            </p>
+        </field>
+    </record>
+
+</odoo>

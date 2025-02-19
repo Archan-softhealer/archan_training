@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View library.borrowing View List -->
+    <record id="view_library_borrowing_list" model="ir.ui.view">
+        <field name="name">view.library.borrowing.list</field>
+        <field name="model">library.borrowing</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="member_id" />
+            </list>
+        </field>
+    </record>
+
+    <!-- View library.borrowing form -->
+    <record id="view_library_borrowing_form" model="ir.ui.view">
+        <field name="name">view.library.borrowing.form</field>
+        <field name="model">library.borrowing</field>
+        <field name="arch" type="xml">
+            <form string="Library Borrowing">
+                <sheet>
+                   <group >
+                     <field name="member_id" />
+                     <field name="book_id" />
+                     <field name="borrow_date" />
+                     <field name="return_date" />
+                     <field name="state" />
+                   </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View library.borrowing search -->
+    <!-- <record id="view_library_borrowing_search" model="ir.ui.view">
+        <field name="name">view.library.borrowing.search</field>
+        <field name="model">library.borrowing</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <!-- Action library.borrowing -->
+    <record id="action_library_borrowing" model="ir.actions.act_window">
+        <field name="name">Library Borrowing</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.borrowing</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Library Borrowing.
+            </p>
+        </field>
+    </record>
+
+</odoo>

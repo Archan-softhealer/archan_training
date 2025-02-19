@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>   
+    <menuitem id="sh_emp_menu_root" name="Employee_Menu" action="sh_employee_action" sequence="1">
+         <menuitem id="sh_department_sub" name="Department" action="action_sh_department"/>
+         <menuitem id="sh_jobs_sub" name="Jobs" action="action_sh_jobs"/>
+         <menuitem id="sh_category_sub" name="Category" action="action_sh_category"/>
+         <menuitem id="model_name_hospital" name="Hospital">
+            <menuitem id="sh_doctor_sub" name="Doctor" action="action_sh_doctor"/> 
+             <menuitem id="sh_patient_sub" name="Patient" action="action_sh_patient"/>
+            <menuitem id="sh_diagnosis_sub" name="Diagnosis" action="action_sh_diagnosis"/>
+        </menuitem>
+        <menuitem id="sh_age_category_sub" name="Age Category" action="action_sh_agecategory"/>
+    </menuitem> 
+</odoo>
+    

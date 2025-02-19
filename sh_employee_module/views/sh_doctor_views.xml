@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View sh.Doctor View List -->
+    <record id="view_sh_Doctor_list" model="ir.ui.view">
+        <field name="name">view.sh.doctor.list</field>
+        <field name="model">sh.doctor</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View sh.Doctor form -->
+    <record id="view_sh_Doctor_form" model="ir.ui.view">
+        <field name="name">view.sh.doctor.form</field>
+        <field name="model">sh.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Sh Doctor">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <div>
+                      <group >
+                         <field name="specialization" />
+                         <field name="patients" />
+                      </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>   
+
+    <record id="view_sh_doctor_search" model="ir.ui.view">
+        <field name="name">view.sh.doctor.search</field>
+        <field name="model">sh.doctor</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    
+
+    <!-- Action sh.Doctor -->
+    <record id="action_sh_doctor" model="ir.actions.act_window">
+        <field name="name">Sh Doctor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.doctor</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Sh Doctor.
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View sh.agecategory View List -->
+    <record id="view_sh_agecategory_list" model="ir.ui.view">
+        <field name="name">view.sh.agecategory.list</field>
+        <field name="model">sh.agecategory</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View sh.agecategory form -->
+    <record id="view_sh_agecategory_form" model="ir.ui.view">
+        <field name="name">view.sh.agecategory.form</field>
+        <field name="model">sh.agecategory</field>
+        <field name="arch" type="xml">
+            <form string="Sh Agecategory">
+                <sheet>
+                    <group>
+                      <field name="name"/>
+                      <field name="min_age"/>
+                      <field name="max_age"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View sh.agecategory search -->
+    <record id="view_sh_agecategory_search" model="ir.ui.view">
+        <field name="name">view.sh.agecategory.search</field>
+        <field name="model">sh.agecategory</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action sh.agecategory -->
+    <record id="action_sh_agecategory" model="ir.actions.act_window">
+        <field name="name">Sh Agecategory</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.agecategory</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Sh Agecategory.
+            </p>
+        </field>
+    </record>
+
+</odoo>
