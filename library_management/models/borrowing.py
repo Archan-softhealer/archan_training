@@ -69,9 +69,9 @@ class Borrowing(models.Model):
                 else:
                     book.available_copies = count - 1
                     # book.members = mem_id
-                    mem_id.write({'borrowed_books':[[4,self.book_id]]})                   
+                    mem_id.write({'borrowed_books':[[4,self.book_id.id]]})                   
           else:        
             book.available_copies = count + 1
-            mem_id.write({'borrowed_books':[[3,self.book_id]]}) 
+            mem_id.write({'borrowed_books':[[3,self.book_id.id]]}) 
          
        return super().write(vals)        
