@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- View sale.order form -->
+    <record id="view_sale_order_form" model="ir.ui.view">
+        <field name="name">view.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after" >
+              <field name="custom_note" widget='many2many_tags' />
+            </xpath>
+            <xpath expr="//field[@name='product_template_id']" position="before" >
+              <field name="custom_note"  />
+            </xpath>
+        </field>
+    </record>
+
+     <record id="view_sale_order_tree" model="ir.ui.view">
+        <field name="name">view.sale.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before" >
+              <field name="custom_note" widget='many2many_tags' />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
