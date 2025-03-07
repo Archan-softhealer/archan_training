@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0"> 
+        <record id="timesheet_security_category" model="ir.module.category">
+            <field name="name">TimeSheet Management</field>
+            <field name="description">This Is For TimeSheet Management Module</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="timesheet_user_group" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="time_sheet.timesheet_security_category"/>
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]" />
+            <field name="comment">This Access Right For Users</field>
+        </record>
+
+        <record id="timesheet_manager_group" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="time_sheet.timesheet_security_category" />
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]" />
+            <field name="comment">This Access Right For Manager</field>
+        </record>
+    </data>
+</odoo>

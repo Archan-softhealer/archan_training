@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <!--    Report Template-->
+   <template id="report_timesheet">
+        <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                  <div class="page">
+                    <tbody>
+                        <div>
+                            <t t-foreach="docs" t-as="doc">
+                               <h3><b><span t-field="doc.name"></span></b></h3><br/> 
+                                <div class="row mb-1">
+                                        <div class="col"><b>Name</b></div>
+                                        <div class="col"><b>Description</b></div>
+                                        <div class="col"><b>Task count</b></div>
+                                        <div class="col"><b>Rejection Reason</b></div>
+                                        <div class="col"><b>Total Hours</b></div>
+                                </div>
+                                <div class="row mb-5">
+                                        <div class="col"><span t-field="doc.name"></span></div>
+                                        <div class="col"><span t-field="doc.description"></span></div>
+                                        <div class="col"><span t-field="doc.count"></span></div>
+                                        <div class="col"><span t-field="doc.rejection_reason"></span></div>
+                                        <div class="col"><span t-field="doc.total_hours"></span></div>
+                                </div>
+                           </t>
+                        </div>         
+                    </tbody>
+                </div>
+                </t>
+        </t>
+    </template>
+
+    <record id="action_report_warranty" model="ir.actions.report">
+        <field name="name">Warranty PDF</field>
+        <field name="model">sh.timesheet</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">time_sheet.report_timesheet</field>
+        <field name="report_file">time_sheet.report_timesheet</field>
+        <!-- <field name="print_report_name"></field> -->
+        <field name="binding_model_id" ref="model_sh_timesheet"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

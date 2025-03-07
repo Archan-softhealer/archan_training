@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View sh.rejection form -->
+    <record id="view_sh_rejection_form" model="ir.ui.view">
+        <field name="name">view.sh.rejection.form</field>
+        <field name="model">sh.rejection</field>
+        <field name="arch" type="xml">
+            <form string="Sh Rejection">
+               <group>
+                    <field name="name"/>
+               </group>
+               <footer>
+                  <button string='Reject'  name='submit_reason'  type='object' class="btn btn-danger"/>
+                   <button string='Discard' special='cancel' class="btn btn-secondary"/>
+               </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action sh.rejection -->
+    <record id="action_sh_rejection" model="ir.actions.act_window">
+        <field name="name">Sh Rejection</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.rejection</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Sh Rejection.
+            </p>
+        </field>
+    </record>
+
+</odoo>

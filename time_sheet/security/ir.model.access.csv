@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tag,sh.tag,model_sh_tag,base.group_user,1,1,1,1
+access_task,sh.task,model_sh_task,base.group_user,1,1,1,1
+access_sh_timesheet_user,sh.timesheet,model_sh_timesheet,timesheet_user_group,1,1,1,0
+access_sh_timesheet_manager,sh.timesheet,model_sh_timesheet,timesheet_manager_group,1,1,0,1
+access_rejection,sh.rejection,model_sh_rejection,base.group_user,1,1,1,1
+
