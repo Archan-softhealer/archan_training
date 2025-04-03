@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sh_auto_sale_workflow_list" model="ir.ui.view">
+        <field name="name">view.sh.auto.sale.workflow.list</field>
+        <field name="model">sh.auto.sale.workflow</field>
+        <field name="arch" type="xml">
+            <list>
+              <field name="name" />
+              <field name="validate_order" widget="boolean_toggle"/>
+              <field name="create_invoice" widget="boolean_toggle"/>
+              <field name="validate_invoice" widget="boolean_toggle"/>
+              <field name="register_payment" widget="boolean_toggle"/>
+              <field name="send_invoice_by_email" widget="boolean_toggle"/>
+              <field name="sale_journal" />
+              <field name="payment_journal" />
+              <field name="company" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_sh_auto_sale_workflow_form" model="ir.ui.view">
+        <field name="name">view.sh.auto.sale.workflow.form</field>
+        <field name="model">sh.auto.sale.workflow</field>
+        <field name="arch" type="xml">
+            <form string="Sh Auto Sale Workflow">
+                <sheet>
+                  <div>
+                     <h1><field name="name" /></h1>
+                  </div>
+                   <group>
+                        <group name="workflow_option" string="Workflow Option">
+                          <field name="validate_order" />
+                          <field name="create_invoice"/>
+                          <field name="validate_invoice" invisible="create_invoice!=True" />
+                          <field name="register_payment" invisible="validate_invoice!=True"/>
+                          <field name="send_invoice_by_email" invisible="validate_invoice!=True"/>
+                        </group>
+                        <group>
+                            <field name="sale_journal" invisible="create_invoice!=True"/>
+                            <field name="payment_journal" invisible="register_payment!=True"/>
+                            <field name="payment_method" invisible="create_invoice!=True"/>
+                            <field name="company" />
+                        </group>
+                   </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sh_auto_sale_workflow" model="ir.actions.act_window">
+        <field name="name">Auto Sale Workflow</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.auto.sale.workflow</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Sh Auto Sale Workflow.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="sh_auto_sale_workflow_menu" action="action_sh_auto_sale_workflow" name="Auto Sale Workflow"/>
+
+</odoo>

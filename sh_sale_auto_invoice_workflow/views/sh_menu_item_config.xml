@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <menuitem id="sh_sale_autoflow_main_menu" 
+    name="Sale Auto Workflow" 
+    sequence="56" 
+    action="action_sh_auto_sale_workflow" 
+    parent="sale.menu_sale_config"
+    groups="sh_sale_auto_invoice_workflow.sh_res_config_sale_automation_group"/>
+</odoo>

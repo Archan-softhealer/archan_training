@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sh_res_config_sale_automation_group" model="res.groups">
+        <field name="name">Sale Automation Management</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+     </record>
+ 
+
+</odoo>
