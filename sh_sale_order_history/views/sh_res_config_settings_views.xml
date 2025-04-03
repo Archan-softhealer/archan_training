@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_res_config_settings_form" model="ir.ui.view">
+        <field name="name">view.res.config.settings.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app/block[@name='sale_shipping_setting_container']" position="after">
+              <block title="Sale Order History Configration" id="sh_sale_order_history_config">
+                  <setting id="last_no_of_orders" >
+                    <field name="sh_last_no_of_orders" />  
+                  </setting>
+                  <setting id="last_no_of_days_orders" >
+                     <field name="sh_last_no_of_days_orders" />
+                  </setting>
+                  <setting id="stages">
+                    <field name="stages" widget='many2many_tags'/>
+                  </setting>
+                  <setting id="enable_recorer" help = 'Enable Recorder Button For Sale Order History'>
+                    <field name="group_enable_reorder" widget="upgrade_boolean"/>
+                  </setting>
+              </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
