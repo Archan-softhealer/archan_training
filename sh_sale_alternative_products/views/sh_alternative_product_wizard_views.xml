@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_alternative_product_wizard_form" model="ir.ui.view">
+        <field name="name">view.alternative.product.wizard.form</field>
+        <field name="model">alternative.product.wizard</field>
+        <field name="arch" type="xml">
+           <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="product_id" />
+                        <field name="alternative_product_id" domain="[('id','in',alt_product)]"/>   
+                        <field name="alt_product"/>
+                    </group>
+                </sheet>
+                 <footer>
+                    <button name="replace_method" string="Replace" type="object" class="btn-success"/>
+                    <button string="Cancel" class="btn-danger" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_alternative_product_wizard" model="ir.actions.act_window">
+        <field name="name">Alternative Product Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">alternative.product.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Alternative Product Wizard.
+            </p>
+        </field>
+    </record>
+
+</odoo>

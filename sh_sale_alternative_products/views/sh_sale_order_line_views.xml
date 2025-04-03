@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="inherit_button_list" model="ir.ui.view">
+        <field name="name">inherit.button.list</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[@name='tax_id']" position="after">
+                <button class="btn btn-success"  groups='sh_sale_alternative_products.sh_sale_alternative_products_user_group' type="object"  name="open_alternative_product_wizard" icon="fa-book"/>
+            </xpath>
+        </field>
+    </record> 
+
+</odoo>
