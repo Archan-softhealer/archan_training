@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_calendar_event_form" model="ir.ui.view">
+        <field name="name">view.calendar.event.form</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//notebook/page[@name='page_invitations']" position="after">
+               <page name="timesheet" string="Timesheet" groups="sh_calendar_meeting_timesheet.enable_timesheet_group">
+                   <field name="sh_timesheet_ids" >
+                        <list editable="bottom">
+                            <field name="date" />   
+                            <field name="project_id"/>   
+                            <field name="task_id" />    
+                            <field name="partner_id" />
+                            <field name="name"/>
+                            <field name="unit_amount"/>                     
+                        </list>
+                   </field>
+               </page>
+            </xpath>
+            <xpath expr="//field[@name='alarm_ids']" position="after">
+                <field name="project_ids" />
+                <field name="task_ids" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
