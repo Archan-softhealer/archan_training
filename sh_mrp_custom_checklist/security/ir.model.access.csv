@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sh_mrp_custom_checklist,sh.mrp.checklist,model_sh_mrp_checklist,base.group_user,1,1,1,1
+access_sh_mrp_custom_checklist_template,sh.mrp.checklist.template,model_sh_mrp_checklist_template,base.group_user,1,1,1,1
+sh_mrp_custom_checklist_line,sh.mrp.custom.checklist.line,model_sh_mrp_custom_checklist_line,base.group_user,1,1,1,1
+access_sh_import_mrp_custom_checklist,sh.import.mrp.custom.checklist,model_sh_import_mrp_custom_checklist,base.group_user,1,1,1,1

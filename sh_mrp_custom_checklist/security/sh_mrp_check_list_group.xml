@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sh_manufacturing_checklist_group" model="res.groups">
+        <field name="name">Manufacturing Checklist Group</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+     </record>
+    
+     <record id="company_wise_filter" model="ir.rule">
+        <field name="name">Company wise filter checklist</field>
+        <field name="model_id" ref="model_sh_mrp_checklist"/>
+        <field name="domain_force">[('company', 'in', company_ids)]</field>
+    </record>
+    <record id="company_wise_filter_template" model="ir.rule">
+            <field name="name">Company wise filter template</field>
+            <field name="model_id" ref="model_sh_mrp_checklist_template"/>
+            <field name="domain_force">[('company', 'in', company_ids)]</field>
+    </record>
+
+</odoo>
